@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зеленые чаи - Польза и сорта</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #e8f5e8 0%, #f0f8f0 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #4a7c59 0%, #2d5a42 100%);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(74, 124, 89, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .intro {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid #4a7c59;
+        }
+
+        .intro h2 {
+            color: #2d5a42;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .intro p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .benefits {
+            background: #f8fdf8;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed #4a7c59;
+        }
+
+        .benefits h3 {
+            color: #2d5a42;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .benefits ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .benefits li {
+            margin-bottom: 8px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .benefits li:before {
+            content: "🍃";
+            position: absolute;
+            left: 0;
+        }
+
+        .tea-varieties {
+            margin-top: 40px;
+        }
+
+        .varieties-title {
+            text-align: center;
+            color: #2d5a42;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .varieties-title:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #4a7c59, #2d5a42);
+            border-radius: 2px;
+        }
+
+        .tea-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .tea-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+
+        .tea-header {
+            background: linear-gradient(135deg, #5a8a6b 0%, #4a7c59 100%);
+            padding: 20px;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            color: white;
+            transition: all 0.3s ease;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            display: block;
+        }
+
+        .tea-header:hover {
+            background: linear-gradient(135deg, #4a7c59 0%, #3a6b49 100%);
+        }
+
+        .tea-header h3 {
+            margin: 0;
+            font-size: 1.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background: white;
+            margin: 20px;
+            padding: 0;
+            border-radius: 20px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+            position: relative;
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #4a7c59 0%, #2d5a42 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 20px 20px 0 0;
+            position: relative;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-size: 1.6rem;
+            padding-right: 50px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .modal-body {
+            padding: 30px;
+        }
+
+        .back-btn {
+            background: linear-gradient(135deg, #4a7c59 0%, #2d5a42 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(74, 124, 89, 0.3);
+        }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 124, 89, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .tea-features {
+            background: #f8fdf8;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid #4a7c59;
+        }
+
+        .tea-features h4 {
+            color: #2d5a42;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .tea-features ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tea-features li {
+            margin-bottom: 5px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .tea-features li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4a7c59;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px;
+            background: #2d5a42;
+            color: white;
+            border-radius: 15px;
+        }
+
+        .footer-emoji {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            header {
+                padding: 30px 15px;
+                margin-bottom: 30px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .intro {
+                padding: 20px;
+            }
+
+            .intro h2 {
+                font-size: 1.5rem;
+            }
+
+            .intro p {
+                font-size: 1rem;
+            }
+
+            .varieties-title {
+                font-size: 1.7rem;
+            }
+
+            .tea-header {
+                padding: 20px;
+                min-height: 60px;
+                touch-action: manipulation;
+            }
+
+            .tea-header h3 {
+                font-size: 1.2rem;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10px;
+            }
+
+            .modal-header {
+                padding: 20px;
+            }
+
+            .modal-header h3 {
+                font-size: 1.4rem;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+
+            .benefits {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .intro {
+                padding: 15px;
+            }
+
+            .tea-header {
+                padding: 18px;
+                min-height: 65px;
+            }
+
+            .modal-body {
+                padding: 15px;
+            }
+
+            .modal-header {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍃 Зеленые чаи</h1>
+            <p class="subtitle">Мир вкуса, здоровья и традиций</p>
+        </header>
+
+        <div class="intro">
+            <h2>Что такое зеленый чай?</h2>
+            <p>Зеленый чай — это тип чая, который производится из листьев чайного куста Camellia sinensis. В отличие от черного чая, зеленый чай проходит минимальную обработку и не подвергается ферментации, что позволяет сохранить большинство полезных веществ и антиоксидантов.</p>
+            
+            <p>Процесс производства зеленого чая включает сбор свежих листьев, их быструю обработку паром или обжарку для остановки процесса окисления, затем сушку. Благодаря этому чай сохраняет свой характерный зеленый цвет и свежий, травянистый вкус.</p>
+
+            <div class="benefits">
+                <h3>Польза зеленого чая:</h3>
+                <ul>
+                    <li>Богат антиоксидантами, которые защищают клетки от повреждений</li>
+                    <li>Содержит катехины, особенно EGCG, обладающие противовоспалительными свойствами</li>
+                    <li>Может способствовать снижению веса и улучшению метаболизма</li>
+                    <li>Поддерживает здоровье сердечно-сосудистой системы</li>
+                    <li>Улучшает работу мозга и концентрацию внимания</li>
+                    <li>Обладает противомикробными и противовирусными свойствами</li>
+                    <li>Может снижать риск развития некоторых видов рака</li>
+                    <li>Поддерживает здоровье кожи и замедляет процессы старения</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="tea-varieties">
+            <h2 class="varieties-title">Популярные сорта зеленого чая</h2>
+
+            <div class="tea-item">
+                <button class="tea-header" onclick="openModal('jasmine-modal')">
+                    <h3>
+                        Jasmine Green Beverage (Жасминовый зеленый чай)
+                        <span class="toggle-icon">→</span>
+                    </h3>
+                </button>
+            </div>
+
+            <div class="tea-item">
+                <button class="tea-header" onclick="openModal('gunpowder-modal')">
+                    <h3>
+                        Gunpowder (Ганпаудер)
+                        <span class="toggle-icon">→</span>
+                    </h3>
+                </button>
+            </div>
+
+            <div class="tea-item">
+                <button class="tea-header" onclick="openModal('sencha-modal')">
+                    <h3>
+                        Sencha (Сенча)
+                        <span class="toggle-icon">→</span>
+                    </h3>
+                </button>
+            </div>
+
+            <div class="tea-item">
+                <button class="tea-header" onclick="openModal('maofeng-modal')">
+                    <h3>
+                        Green Mao Feng (Зеленый Мао Фэн)
+                        <span class="toggle-icon">→</span>
+                    </h3>
+                </button>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-emoji">🍵</div>
+            <p>Наслаждайтесь волшебным миром зеленого чая!</p>
+            <p>Каждая чашка — это путешествие к здоровью и гармонии</p>
+        </footer>
+    </div>
+
+    <!-- Модальные окна -->
+    <div id="jasmine-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Jasmine Green Beverage</h3>
+                <button class="close-btn" onclick="closeModal('jasmine-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Жасминовый зеленый чай — это ароматизированный чай, в котором зеленые чайные листья смешиваются с цветками жасмина или пропитываются их ароматом. Этот чай имеет долгую историю в китайской чайной культуре и считается одним из самых изысканных ароматизированных чаев.</p>
+                
+                <p>Процесс ароматизации может происходить несколькими способами: листья чая смешивают с живыми цветками жасмина на несколько часов или дней, позволяя чаю впитать нежный цветочный аромат. Лучшие сорта проходят этот процесс многократно.</p>
+
+                <div class="tea-features">
+                    <h4>Особенности:</h4>
+                    <ul>
+                        <li>Нежный цветочный аромат с освежающими нотками</li>
+                        <li>Мягкий, сладковатый вкус без горечи</li>
+                        <li>Бледно-зеленый или золотистый цвет настоя</li>
+                        <li>Успокаивающий эффект благодаря аромату жасмина</li>
+                        <li>Идеален для вечернего чаепития</li>
+                        <li>Помогает снять стресс и улучшить настроение</li>
+                    </ul>
+                </div>
+                
+                <button class="back-btn" onclick="closeModal('jasmine-modal')">← Обратно</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gunpowder-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Gunpowder (Ганпаудер)</h3>
+                <button class="close-btn" onclick="closeModal('gunpowder-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Ганпаудер — это особый вид зеленого чая, получивший свое название из-за формы листьев, которые скручены в маленькие плотные шарики, напоминающие порох (gunpowder). Этот метод обработки появился в Китае и позволяет лучше сохранить аромат и вкус чая.</p>
+                
+                <p>Скручивание листьев в шарики происходит вручную или с помощью специальных машин сразу после обработки паром. Такая форма защищает чайные листья от воздействия воздуха и влаги, сохраняя их свежесть на более длительное время.</p>
+
+                <div class="tea-features">
+                    <h4>Особенности:</h4>
+                    <ul>
+                        <li>Насыщенный, крепкий вкус с легкой горчинкой</li>
+                        <li>Яркий желто-зеленый цвет настоя</li>
+                        <li>Высокое содержание кофеина</li>
+                        <li>Долгий срок хранения благодаря плотной скрутке</li>
+                        <li>Можно заваривать несколько раз</li>
+                        <li>Отлично подходит для утреннего чаепития</li>
+                        <li>Хорошо сочетается с мятой в марокканском стиле</li>
+                    </ul>
+                </div>
+                
+                <button class="back-btn" onclick="closeModal('gunpowder-modal')">← Обратно</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="sencha-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Sencha (Сенча)</h3>
+                <button class="close-btn" onclick="closeModal('sencha-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Сенча — самый популярный вид зеленого чая в Японии, составляющий около 80% всего производимого в стране зеленого чая. Название "сенча" означает "заваренный чай" и отражает традиционный способ его приготовления.</p>
+                
+                <p>Особенность сенчи заключается в том, что чайные кусты выращиваются на открытом солнце, а свежие листья обрабатываются паром сразу после сбора, что останавливает процесс окисления и сохраняет яркий зеленый цвет и свежий вкус.</p>
+
+                <div class="tea-features">
+                    <h4>Особенности:</h4>
+                    <ul>
+                        <li>Свежий, травянистый вкус с легкой сладостью</li>
+                        <li>Яркий зеленый цвет листьев и настоя</li>
+                        <li>Умеренное содержание кофеина</li>
+                        <li>Богат витамином C и антиоксидантами</li>
+                        <li>Идеально подходит для ежедневного потребления</li>
+                        <li>Традиционно заваривается при температуре 70-80°C</li>
+                        <li>Лучше всего раскрывается при коротком времени заваривания</li>
+                    </ul>
+                </div>
+                
+                <button class="back-btn" onclick="closeModal('sencha-modal')">← Обратно</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="maofeng-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Green Mao Feng (Зеленый Мао Фэн)</h3>
+                <button class="close-btn" onclick="closeModal('maofeng-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Мао Фэн — это премиальный китайский зеленый чай, название которого переводится как "ворсистые пики". Он получил это название благодаря форме чайных листьев, которые напоминают маленькие пики, покрытые белым ворсом (типсами).</p>
+                
+                <p>Самый известный представитель этой категории — Хуаншань Мао Фэн, который выращивается в горах Хуаншань провинции Аньхой. Этот чай собирается ранней весной, когда листья молодые и нежные, что придает ему особую деликатность.</p>
+
+                <div class="tea-features">
+                    <h4>Особенности:</h4>
+                    <ul>
+                        <li>Нежный, сладковатый вкус с цветочными нотками</li>
+                        <li>Светло-зеленый, почти прозрачный настой</li>
+                        <li>Тонкий, изысканный аромат</li>
+                        <li>Плоские, заостренные листья с белыми типсами</li>
+                        <li>Низкое содержание кофеина</li>
+                        <li>Считается одним из самых деликатных зеленых чаев</li>
+                        <li>Требует особого внимания при заваривании</li>
+                        <li>Идеален для медитативного чаепития</li>
+                    </ul>
+                </div>
+                
+                <button class="back-btn" onclick="closeModal('maofeng-modal')">← Обратно</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Функции для работы с модальными окнами
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Предотвращаем прокрутку фона
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = ''; // Возвращаем прокрутку
+            }
+        }
+
+        // Обработка событий для мобильных устройств
+        document.addEventListener('DOMContentLoaded', function() {
+            // Закрытие модального окна при клике на фон
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+
+            // Закрытие модального окна при нажатии Escape
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const activeModal = document.querySelector('.modal.active');
+                    if (activeModal) {
+                        activeModal.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                }
+            });
+
+            // Touch события для кнопок чая
+            const teaButtons = document.querySelectorAll('.tea-header');
+            teaButtons.forEach(button => {
+                // Touch feedback
+                button.addEventListener('touchstart', function(e) {
+                    this.style.transform = 'scale(0.98)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+                
+                button.addEventListener('touchcancel', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Touch события для кнопок в модальных окнах
+            const modalButtons = document.querySelectorAll('.back-btn, .close-btn');
+            modalButtons.forEach(button => {
+                button.addEventListener('touchstart', function(e) {
+                    this.style.transform = 'scale(0.95)';
+                });
+                
+                button.addEventListener('touchend', function() {
+                    this.style.transform = 'scale(1)';
+                });
+                
+                button.addEventListener('touchcancel', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
