@@ -486,46 +486,46 @@
 <body>
     <div class="container">
         <div class="top-nav">
-            <img src="https://i.ibb.co/tMCT4jb7/srb-white-verical.png" alt="Logo" class="logo">
+            <img src="https://i.ibb.co/MDTmtDt5/srb-black-verical.png" alt="Logo" class="logo">
             <div class="nav-controls">
-                <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">EN</button>
-                <a href="https://t.me/srecha2024" class="buy-btn" target="_blank" id="buy-btn">Приобрести</a>
+                <button class="lang-toggle" onclick="toggleLanguage()" id="lang-btn">RU</button>
+                <a href="https://t.me/srecha2024" class="buy-btn" target="_blank" id="buy-btn">Purchase</a>
             </div>
         </div>
         
         <header>
-            <h1 id="main-title">Зеленые чаи</h1>
-            <p class="subtitle" id="main-subtitle">Мир вкуса, здоровья и традиций</p>
+            <h1 id="main-title">Green Teas</h1>
+            <p class="subtitle" id="main-subtitle">World of taste, health and traditions</p>
         </header>
 
         <div class="intro">
-            <h2 id="intro-title">Что такое зеленый чай?</h2>
-            <p id="intro-p1">Зеленый чай — это тип чая, который производится из листьев чайного куста Camellia sinensis. В отличие от черного чая, зеленый чай проходит минимальную обработку и не подвергается ферментации, что позволяет сохранить большинство полезных веществ и антиоксидантов.</p>
+            <h2 id="intro-title">What is green tea?</h2>
+            <p id="intro-p1">Green tea is a type of tea produced from the leaves of the Camellia sinensis plant. Unlike black tea, green tea undergoes minimal processing and is not fermented, which allows it to retain most of its beneficial substances and antioxidants.</p>
             
-            <p id="intro-p2">Процесс производства зеленого чая включает сбор свежих листьев, их быструю обработку паром или обжарку для остановки процесса окисления, затем сушку. Благодаря этому чай сохраняет свой характерный зеленый цвет и свежий, травянистый вкус.</p>
+            <p id="intro-p2">The green tea production process includes harvesting fresh leaves, quickly processing them with steam or roasting to stop the oxidation process, then drying. This allows the tea to retain its characteristic green color and fresh, grassy taste.</p>
 
             <div class="benefits">
-                <h3 id="benefits-title">Польза зеленого чая:</h3>
+                <h3 id="benefits-title">Benefits of green tea:</h3>
                 <ul id="benefits-list">
-                    <li id="benefit-1">Богат антиоксидантами, которые защищают клетки от повреждений</li>
-                    <li id="benefit-2">Содержит катехины, особенно EGCG, обладающие противовоспалительными свойствами</li>
-                    <li id="benefit-3">Может способствовать снижению веса и улучшению метаболизма</li>
-                    <li id="benefit-4">Поддерживает здоровье сердечно-сосудистой системы</li>
-                    <li id="benefit-5">Улучшает работу мозга и концентрацию внимания</li>
-                    <li id="benefit-6">Обладает противомикробными и противовирусными свойствами</li>
-                    <li id="benefit-7">Может снижать риск развития некоторых видов рака</li>
-                    <li id="benefit-8">Поддерживает здоровье кожи и замедляет процессы старения</li>
+                    <li id="benefit-1">Rich in antioxidants that protect cells from damage</li>
+                    <li id="benefit-2">Contains catechins, especially EGCG, with anti-inflammatory properties</li>
+                    <li id="benefit-3">May help with weight loss and improve metabolism</li>
+                    <li id="benefit-4">Supports cardiovascular health</li>
+                    <li id="benefit-5">Improves brain function and concentration</li>
+                    <li id="benefit-6">Has antimicrobial and antiviral properties</li>
+                    <li id="benefit-7">May reduce the risk of certain types of cancer</li>
+                    <li id="benefit-8">Supports skin health and slows aging processes</li>
                 </ul>
             </div>
         </div>
 
         <div class="tea-varieties">
-            <h2 class="varieties-title" id="varieties-title">Популярные сорта зеленого чая</h2>
+            <h2 class="varieties-title" id="varieties-title">Popular green tea varieties</h2>
 
             <div class="tea-item">
                 <button class="tea-header" onclick="openModal('jasmine-modal')">
                     <h3>
-                        Jasmine Green Beverage (Жасминовый зеленый чай)
+                        <span id="jasmine-tea-name">Jasmine Green Beverage</span>
                         <span class="toggle-icon">→</span>
                     </h3>
                 </button>
@@ -534,7 +534,7 @@
             <div class="tea-item">
                 <button class="tea-header" onclick="openModal('gunpowder-modal')">
                     <h3>
-                        Gunpowder (Ганпаудер)
+                        <span id="gunpowder-tea-name">Gunpowder</span>
                         <span class="toggle-icon">→</span>
                     </h3>
                 </button>
@@ -543,7 +543,7 @@
             <div class="tea-item">
                 <button class="tea-header" onclick="openModal('sencha-modal')">
                     <h3>
-                        Sencha (Сенча)
+                        <span id="sencha-tea-name">Sencha</span>
                         <span class="toggle-icon">→</span>
                     </h3>
                 </button>
@@ -552,7 +552,7 @@
             <div class="tea-item">
                 <button class="tea-header" onclick="openModal('maofeng-modal')">
                     <h3>
-                        Green Mao Feng (Зеленый Мао Фэн)
+                        <span id="maofeng-tea-name">Green Mao Feng</span>
                         <span class="toggle-icon">→</span>
                     </h3>
                 </button>
@@ -561,8 +561,8 @@
 
         <footer>
             <div class="footer-emoji">🍵</div>
-            <p>Наслаждайтесь волшебным миром зеленого чая!</p>
-            <p>Каждая чашка — это путешествие к здоровью и гармонии</p>
+            <p id="footer-text1">Enjoy the magical world of green tea!</p>
+            <p id="footer-text2">Every cup is a journey to health and harmony</p>
         </footer>
     </div>
 
@@ -574,35 +574,35 @@
                 <button class="close-btn" onclick="closeModal('jasmine-modal')">&times;</button>
             </div>
             <div class="modal-body">
-                <p id="jasmine-desc1">Жасминовый зеленый чай — это ароматизированный чай, в котором зеленые чайные листья смешиваются с цветками жасмина или пропитываются их ароматом. Этот чай имеет долгую историю в китайской чайной культуре и считается одним из самых изысканных ароматизированных чаев.</p>
+                <p id="jasmine-desc1">Jasmine green tea is a flavored tea where green tea leaves are mixed with jasmine flowers or infused with their aroma. This tea has a long history in Chinese tea culture and is considered one of the most exquisite flavored teas.</p>
                 
-                <p id="jasmine-desc2">Процесс ароматизации может происходить несколькими способами: листья чая смешивают с живыми цветками жасмина на несколько часов или дней, позволяя чаю впитать нежный цветочный аромат. Лучшие сорта проходят этот процесс многократно.</p>
+                <p id="jasmine-desc2">The flavoring process can happen in several ways: tea leaves are mixed with live jasmine flowers for several hours or days, allowing the tea to absorb the delicate floral aroma. The finest varieties undergo this process multiple times.</p>
 
                 <div class="tea-features">
-                    <h4 id="jasmine-features-title">Особенности:</h4>
+                    <h4 id="jasmine-features-title">Features:</h4>
                     <ul id="jasmine-features">
-                        <li id="jasmine-feature-1">Нежный цветочный аромат с освежающими нотками</li>
-                        <li id="jasmine-feature-2">Мягкий, сладковатый вкус без горечи</li>
-                        <li id="jasmine-feature-3">Бледно-зеленый или золотистый цвет настоя</li>
-                        <li id="jasmine-feature-4">Успокаивающий эффект благодаря аромату жасмина</li>
-                        <li id="jasmine-feature-5">Идеален для вечернего чаепития</li>
-                        <li id="jasmine-feature-6">Помогает снять стресс и улучшить настроение</li>
+                        <li id="jasmine-feature-1">Delicate floral aroma with refreshing notes</li>
+                        <li id="jasmine-feature-2">Mild, sweet taste without bitterness</li>
+                        <li id="jasmine-feature-3">Pale green or golden brew color</li>
+                        <li id="jasmine-feature-4">Calming effect thanks to jasmine aroma</li>
+                        <li id="jasmine-feature-5">Perfect for evening tea time</li>
+                        <li id="jasmine-feature-6">Helps relieve stress and improve mood</li>
                     </ul>
                 </div>
 
                 <div class="tea-features">
-                    <h4 id="jasmine-brewing-title">Как заваривать:</h4>
+                    <h4 id="jasmine-brewing-title">How to brew:</h4>
                     <ul id="jasmine-brewing">
-                        <li id="jasmine-brew-1">Температура воды: 70-80°C</li>
-                        <li id="jasmine-brew-2">Количество: 1 чайная ложка на 200 мл воды</li>
-                        <li id="jasmine-brew-3">Время заваривания: 2-3 минуты</li>
-                        <li id="jasmine-brew-4">Можно заваривать 2-3 раза</li>
-                        <li id="jasmine-brew-5">Не добавляйте сахар - наслаждайтесь естественной сладостью</li>
-                        <li id="jasmine-brew-6">Лучше всего пить в спокойной обстановке</li>
+                        <li id="jasmine-brew-1">Water temperature: 70-80°C (158-176°F)</li>
+                        <li id="jasmine-brew-2">Amount: 1 teaspoon per 200ml of water</li>
+                        <li id="jasmine-brew-3">Steeping time: 2-3 minutes</li>
+                        <li id="jasmine-brew-4">Can be brewed 2-3 times</li>
+                        <li id="jasmine-brew-5">No need to add sugar - enjoy natural sweetness</li>
+                        <li id="jasmine-brew-6">Best enjoyed in a calm environment</li>
                     </ul>
                 </div>
                 
-                <button class="back-btn" onclick="closeModal('jasmine-modal')" id="jasmine-back">← Обратно</button>
+                <button class="back-btn" onclick="closeModal('jasmine-modal')" id="jasmine-back">← Back</button>
             </div>
         </div>
     </div>
@@ -733,7 +733,7 @@
 
     <script>
         // Система переключения языков
-        let currentLang = 'ru';
+        let currentLang = 'en';
         
         const translations = {
             ru: {
@@ -754,7 +754,95 @@
                 'benefit-6': 'Обладает противомикробными и противовирусными свойствами',
                 'benefit-7': 'Может снижать риск развития некоторых видов рака',
                 'benefit-8': 'Поддерживает здоровье кожи и замедляет процессы старения',
-                'varieties-title': 'Популярные сорта зеленого чая'
+                'varieties-title': 'Популярные сорта зеленого чая',
+                // Jasmine modal
+                'jasmine-modal-title': 'Jasmine Green Beverage (Жасминовый зеленый чай)',
+                'jasmine-desc1': 'Жасминовый зеленый чай — это ароматизированный чай, в котором зеленые чайные листья смешиваются с цветками жасмина или пропитываются их ароматом. Этот чай имеет долгую историю в китайской чайной культуре и считается одним из самых изысканных ароматизированных чаев.',
+                'jasmine-desc2': 'Процесс ароматизации может происходить несколькими способами: листья чая смешивают с живыми цветками жасмина на несколько часов или дней, позволяя чаю впитать нежный цветочный аромат. Лучшие сорта проходят этот процесс многократно.',
+                'jasmine-features-title': 'Особенности:',
+                'jasmine-feature-1': 'Нежный цветочный аромат с освежающими нотками',
+                'jasmine-feature-2': 'Мягкий, сладковатый вкус без горечи',
+                'jasmine-feature-3': 'Бледно-зеленый или золотистый цвет настоя',
+                'jasmine-feature-4': 'Успокаивающий эффект благодаря аромату жасмина',
+                'jasmine-feature-5': 'Идеален для вечернего чаепития',
+                'jasmine-feature-6': 'Помогает снять стресс и улучшить настроение',
+                'jasmine-brewing-title': 'Как заваривать:',
+                'jasmine-brew-1': 'Температура воды: 70-80°C',
+                'jasmine-brew-2': 'Количество: 1 чайная ложка на 200 мл воды',
+                'jasmine-brew-3': 'Время заваривания: 2-3 минуты',
+                'jasmine-brew-4': 'Можно заваривать 2-3 раза',
+                'jasmine-brew-5': 'Не добавляйте сахар - наслаждайтесь естественной сладостью',
+                'jasmine-brew-6': 'Лучше всего пить в спокойной обстановке',
+                'jasmine-back': '← Обратно',
+                // Gunpowder modal
+                'gunpowder-modal-title': 'Gunpowder (Ганпаудер)',
+                'gunpowder-desc1': 'Ганпаудер — это особый вид зеленого чая, получивший свое название из-за формы листьев, которые скручены в маленькие плотные шарики, напоминающие порох (gunpowder). Этот метод обработки появился в Китае и позволяет лучше сохранить аромат и вкус чая.',
+                'gunpowder-desc2': 'Скручивание листьев в шарики происходит вручную или с помощью специальных машин сразу после обработки паром. Такая форма защищает чайные листья от воздействия воздуха и влаги, сохраняя их свежесть на более длительное время.',
+                'gunpowder-features-title': 'Особенности:',
+                'gunpowder-feature-1': 'Насыщенный, крепкий вкус с легкой горчинкой',
+                'gunpowder-feature-2': 'Яркий желто-зеленый цвет настоя',
+                'gunpowder-feature-3': 'Высокое содержание кофеина',
+                'gunpowder-feature-4': 'Долгий срок хранения благодаря плотной скрутке',
+                'gunpowder-feature-5': 'Можно заваривать несколько раз',
+                'gunpowder-feature-6': 'Отлично подходит для утреннего чаепития',
+                'gunpowder-feature-7': 'Хорошо сочетается с мятой в марокканском стиле',
+                'gunpowder-brewing-title': 'Как заваривать:',
+                'gunpowder-brew-1': 'Температура воды: 75-85°C',
+                'gunpowder-brew-2': 'Количество: 1 чайная ложка на 200 мл воды',
+                'gunpowder-brew-3': 'Время заваривания: 2-4 минуты',
+                'gunpowder-brew-4': 'Можно заваривать до 4 раз',
+                'gunpowder-brew-5': 'Идеален для утра - дает энергию',
+                'gunpowder-brew-6': 'Попробуйте добавить мяту для марокканского стиля',
+                'gunpowder-back': '← Обратно',
+                // Sencha modal  
+                'sencha-modal-title': 'Sencha (Сенча)',
+                'sencha-desc1': 'Сенча — самый популярный вид зеленого чая в Японии, составляющий около 80% всего производимого в стране зеленого чая. Название "сенча" означает "заваренный чай" и отражает традиционный способ его приготовления.',
+                'sencha-desc2': 'Особенность сенчи заключается в том, что чайные кусты выращиваются на открытом солнце, а свежие листья обрабатываются паром сразу после сбора, что останавливает процесс окисления и сохраняет яркий зеленый цвет и свежий вкус.',
+                'sencha-features-title': 'Особенности:',
+                'sencha-feature-1': 'Свежий, травянистый вкус с легкой сладостью',
+                'sencha-feature-2': 'Яркий зеленый цвет листьев и настоя',
+                'sencha-feature-3': 'Умеренное содержание кофеина',
+                'sencha-feature-4': 'Богат витамином C и антиоксидантами',
+                'sencha-feature-5': 'Идеально подходит для ежедневного потребления',
+                'sencha-feature-6': 'Традиционно заваривается при температуре 70-80°C',
+                'sencha-feature-7': 'Лучше всего раскрывается при коротком времени заваривания',
+                'sencha-brewing-title': 'Как заваривать:',
+                'sencha-brew-1': 'Температура воды: 70-80°C',
+                'sencha-brew-2': 'Количество: 1 чайная ложка на 200 мл воды',
+                'sencha-brew-3': 'Время заваривания: 1-2 минуты',
+                'sencha-brew-4': 'Можно заваривать 3-4 раза',
+                'sencha-brew-5': 'Не передерживайте - появится горечь',
+                'sencha-brew-6': 'Пейте сразу после заваривания',
+                'sencha-back': '← Обратно',
+                // Mao Feng modal
+                'maofeng-modal-title': 'Green Mao Feng (Зеленый Мао Фэн)',
+                'maofeng-desc1': 'Мао Фэн — это премиальный китайский зеленый чай, название которого переводится как "ворсистые пики". Он получил это название благодаря форме чайных листьев, которые напоминают маленькие пики, покрытые белым ворсом (типсами).',
+                'maofeng-desc2': 'Самый известный представитель этой категории — Хуаншань Мао Фэн, который выращивается в горах Хуаншань провинции Аньхой. Этот чай собирается ранней весной, когда листья молодые и нежные, что придает ему особую деликатность.',
+                'maofeng-features-title': 'Особенности:',
+                'maofeng-feature-1': 'Нежный, сладковатый вкус с цветочными нотками',
+                'maofeng-feature-2': 'Светло-зеленый, почти прозрачный настой',
+                'maofeng-feature-3': 'Тонкий, изысканный аромат',
+                'maofeng-feature-4': 'Плоские, заостренные листья с белыми типсами',
+                'maofeng-feature-5': 'Низкое содержание кофеина',
+                'maofeng-feature-6': 'Считается одним из самых деликатных зеленых чаев',
+                'maofeng-feature-7': 'Требует особого внимания при заваривании',
+                'maofeng-feature-8': 'Идеален для медитативного чаепития',
+                'maofeng-brewing-title': 'Как заваривать:',
+                'maofeng-brew-1': 'Температура воды: 70-75°C',
+                'maofeng-brew-2': 'Количество: 1/2 чайной ложки на 200 мл воды',
+                'maofeng-brew-3': 'Время заваривания: 1-2 минуты',
+                'maofeng-brew-4': 'Можно заваривать до 5 раз',
+                'maofeng-brew-5': 'Используйте мягкую воду',
+                'maofeng-brew-6': 'Пейте медленно, наслаждаясь ароматом',
+                'maofeng-back': '← Обратно',
+                // Tea names in buttons
+                'jasmine-tea-name': 'Jasmine Green Beverage (Жасминовый зеленый чай)',
+                'gunpowder-tea-name': 'Gunpowder (Ганпаудер)',
+                'sencha-tea-name': 'Sencha (Сенча)',
+                'maofeng-tea-name': 'Green Mao Feng (Зеленый Мао Фэн)',
+                // Footer
+                'footer-text1': 'Наслаждайтесь волшебным миром зеленого чая!',
+                'footer-text2': 'Каждая чашка — это путешествие к здоровью и гармонии'
             },
             en: {
                 'page-title': 'Green Teas - Benefits and Varieties',
@@ -774,7 +862,95 @@
                 'benefit-6': 'Has antimicrobial and antiviral properties',
                 'benefit-7': 'May reduce the risk of certain types of cancer',
                 'benefit-8': 'Supports skin health and slows aging processes',
-                'varieties-title': 'Popular green tea varieties'
+                'varieties-title': 'Popular green tea varieties',
+                // Jasmine modal
+                'jasmine-modal-title': 'Jasmine Green Beverage',
+                'jasmine-desc1': 'Jasmine green tea is a flavored tea where green tea leaves are mixed with jasmine flowers or infused with their aroma. This tea has a long history in Chinese tea culture and is considered one of the most exquisite flavored teas.',
+                'jasmine-desc2': 'The flavoring process can happen in several ways: tea leaves are mixed with live jasmine flowers for several hours or days, allowing the tea to absorb the delicate floral aroma. The finest varieties undergo this process multiple times.',
+                'jasmine-features-title': 'Features:',
+                'jasmine-feature-1': 'Delicate floral aroma with refreshing notes',
+                'jasmine-feature-2': 'Mild, sweet taste without bitterness',
+                'jasmine-feature-3': 'Pale green or golden brew color',
+                'jasmine-feature-4': 'Calming effect thanks to jasmine aroma',
+                'jasmine-feature-5': 'Perfect for evening tea time',
+                'jasmine-feature-6': 'Helps relieve stress and improve mood',
+                'jasmine-brewing-title': 'How to brew:',
+                'jasmine-brew-1': 'Water temperature: 70-80°C (158-176°F)',
+                'jasmine-brew-2': 'Amount: 1 teaspoon per 200ml of water',
+                'jasmine-brew-3': 'Steeping time: 2-3 minutes',
+                'jasmine-brew-4': 'Can be brewed 2-3 times',
+                'jasmine-brew-5': 'No need to add sugar - enjoy natural sweetness',
+                'jasmine-brew-6': 'Best enjoyed in a calm environment',
+                'jasmine-back': '← Back',
+                // Gunpowder modal
+                'gunpowder-modal-title': 'Gunpowder',
+                'gunpowder-desc1': 'Gunpowder is a special type of green tea that gets its name from the shape of the leaves, which are rolled into small, tight pellets resembling gunpowder. This processing method originated in China and helps better preserve the tea\'s aroma and flavor.',
+                'gunpowder-desc2': 'The rolling of leaves into pellets is done by hand or with special machines immediately after steam processing. This shape protects the tea leaves from air and moisture exposure, preserving their freshness for a longer time.',
+                'gunpowder-features-title': 'Features:',
+                'gunpowder-feature-1': 'Rich, strong taste with slight bitterness',
+                'gunpowder-feature-2': 'Bright yellow-green brew color',
+                'gunpowder-feature-3': 'High caffeine content',
+                'gunpowder-feature-4': 'Long shelf life due to tight rolling',
+                'gunpowder-feature-5': 'Can be brewed multiple times',
+                'gunpowder-feature-6': 'Excellent for morning tea',
+                'gunpowder-feature-7': 'Pairs well with mint Moroccan style',
+                'gunpowder-brewing-title': 'How to brew:',
+                'gunpowder-brew-1': 'Water temperature: 75-85°C (167-185°F)',
+                'gunpowder-brew-2': 'Amount: 1 teaspoon per 200ml of water',
+                'gunpowder-brew-3': 'Steeping time: 2-4 minutes',
+                'gunpowder-brew-4': 'Can be brewed up to 4 times',
+                'gunpowder-brew-5': 'Perfect for morning - provides energy',
+                'gunpowder-brew-6': 'Try adding mint for Moroccan style',
+                'gunpowder-back': '← Back',
+                // Sencha modal
+                'sencha-modal-title': 'Sencha',
+                'sencha-desc1': 'Sencha is the most popular type of green tea in Japan, comprising about 80% of all green tea produced in the country. The name "sencha" means "brewed tea" and reflects the traditional method of its preparation.',
+                'sencha-desc2': 'The uniqueness of sencha lies in the fact that tea bushes are grown in full sunlight, and fresh leaves are steam-processed immediately after harvesting, which stops the oxidation process and preserves the bright green color and fresh taste.',
+                'sencha-features-title': 'Features:',
+                'sencha-feature-1': 'Fresh, grassy taste with light sweetness',
+                'sencha-feature-2': 'Bright green color of leaves and brew',
+                'sencha-feature-3': 'Moderate caffeine content',
+                'sencha-feature-4': 'Rich in vitamin C and antioxidants',
+                'sencha-feature-5': 'Perfect for daily consumption',
+                'sencha-feature-6': 'Traditionally brewed at 70-80°C',
+                'sencha-feature-7': 'Best revealed with short steeping time',
+                'sencha-brewing-title': 'How to brew:',
+                'sencha-brew-1': 'Water temperature: 70-80°C (158-176°F)',
+                'sencha-brew-2': 'Amount: 1 teaspoon per 200ml of water',
+                'sencha-brew-3': 'Steeping time: 1-2 minutes',
+                'sencha-brew-4': 'Can be brewed 3-4 times',
+                'sencha-brew-5': 'Don\'t over-steep - will become bitter',
+                'sencha-brew-6': 'Drink immediately after brewing',
+                'sencha-back': '← Back',
+                // Mao Feng modal
+                'maofeng-modal-title': 'Green Mao Feng',
+                'maofeng-desc1': 'Mao Feng is a premium Chinese green tea whose name translates to "fur peak." It gets this name from the shape of the tea leaves, which resemble small peaks covered with white down (tips).',
+                'maofeng-desc2': 'The most famous representative of this category is Huangshan Mao Feng, grown in the Huangshan mountains of Anhui province. This tea is harvested in early spring when the leaves are young and tender, giving it special delicacy.',
+                'maofeng-features-title': 'Features:',
+                'maofeng-feature-1': 'Delicate, sweet taste with floral notes',
+                'maofeng-feature-2': 'Light green, almost transparent brew',
+                'maofeng-feature-3': 'Subtle, refined aroma',
+                'maofeng-feature-4': 'Flat, pointed leaves with white tips',
+                'maofeng-feature-5': 'Low caffeine content',
+                'maofeng-feature-6': 'Considered one of the most delicate green teas',
+                'maofeng-feature-7': 'Requires special attention when brewing',
+                'maofeng-feature-8': 'Perfect for meditative tea drinking',
+                'maofeng-brewing-title': 'How to brew:',
+                'maofeng-brew-1': 'Water temperature: 70-75°C (158-167°F)',
+                'maofeng-brew-2': 'Amount: 1/2 teaspoon per 200ml of water',
+                'maofeng-brew-3': 'Steeping time: 1-2 minutes',
+                'maofeng-brew-4': 'Can be brewed up to 5 times',
+                'maofeng-brew-5': 'Use soft water',
+                'maofeng-brew-6': 'Drink slowly, enjoying the aroma',
+                'maofeng-back': '← Back',
+                // Tea names in buttons
+                'jasmine-tea-name': 'Jasmine Green Beverage',
+                'gunpowder-tea-name': 'Gunpowder',
+                'sencha-tea-name': 'Sencha',
+                'maofeng-tea-name': 'Green Mao Feng',
+                // Footer
+                'footer-text1': 'Enjoy the magical world of green tea!',
+                'footer-text2': 'Every cup is a journey to health and harmony'
             }
         };
 
@@ -821,6 +997,8 @@
 
         // Обработка событий для мобильных устройств
         document.addEventListener('DOMContentLoaded', function() {
+            // Инициализация английского языка по умолчанию
+            updatePageLanguage();
             // Закрытие модального окна при клике на фон
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
